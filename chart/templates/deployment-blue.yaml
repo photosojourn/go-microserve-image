@@ -20,6 +20,11 @@ spec:
         - name: go-microservice
           image: "{{ .Values.blue.image }}"
           imagePullPolicy: {{ .Values.blue.pullPolicy }}
+          env:
+             - name: S3_BUCKET
+               value: {{ .Bucket }}
+             - name: AWS_REGION
+               value: {{ .Region }}
           ports:
             - name: http
               containerPort: 8080

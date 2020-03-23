@@ -3,6 +3,8 @@
 # Declare variables to be passed into your templates.
 
 productionSlot: green
+region: eu-west-1
+bucket: russ-demo-test
 
 blue:
   replicaCount: 1
