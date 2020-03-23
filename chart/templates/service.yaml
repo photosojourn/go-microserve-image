@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-microservice
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: go-microservice
+    slot: {{ .Values.productionSlot}}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http

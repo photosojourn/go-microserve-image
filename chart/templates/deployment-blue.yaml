@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-microservice-blue
+spec:
+  replicas: {{ .Values.blue.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: go-microservice
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      slot: blue
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: go-microservice
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        slot: blue
+    spec:
+      containers:
+        - name: go-microservice
+          image: "{{ .Values.blue.image }}"
+          imagePullPolicy: {{ .Values.blue.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              port: http
+          readinessProbe:
+            httpGet:
+              port: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi

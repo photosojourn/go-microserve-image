@@ -1,0 +1,19 @@
+# Default values for go-microservice.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+productionSlot: green
+
+blue:
+  replicaCount: 1
+  image: 480810688838.dkr.ecr.eu-west-1.amazonaws.com/russ-go-microservice:latest
+  pullPolicy: Always
+green:
+  replicaCount: 1
+  image: 480810688838.dkr.ecr.eu-west-1.amazonaws.com/russ-go-microservice:latest
+  pullPolicy: Always
+
+
+service:
+  type: ClusterIP
+  port: 8080
