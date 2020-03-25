@@ -5,6 +5,7 @@
 productionSlot: green
 region: eu-west-1
 bucket: russ-demo-test
+iam_role: go_ms_role
 
 blue:
   replicaCount: 1

@@ -1,8 +1,11 @@
 ## Go-Microservice
 
-This is an example Golang microservice that was written with sole purpose of building and testikng CI/CD pipelines. Litrally it returns just a string. Thats it.
+This is an extenstion to the `go-microservice' which now serves an image after pulling it from an S3 bucket. The bucket and region are set via envrionment variables via the Helm chart.
 
-To over-ride the default message you can get my setting the enviroment variable `GO_MS_MESSAGE`.
+### Environment
+
+* `AWS_REGION` - The AWS region your running in
+* `S3_BUCKET` - Name of the S3 bucket to pull the image from
 
 ### AWS CodeBuild specs
 

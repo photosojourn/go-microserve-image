@@ -16,6 +16,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         slot: green
     spec:
+      serviceAccount: go-microservice
       containers:
         - name: go-microservice
           image: "{{ .Values.green.image }}"
