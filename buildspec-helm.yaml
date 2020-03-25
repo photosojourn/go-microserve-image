@@ -3,7 +3,7 @@ phases:
   pre_build: # Add kubeconfig to access to EKS cluster
     commands:
       - "mkdir ~/.kube/"
-      - aws eks update-kubeconfig --name cluster1 --role-arn arn:aws:iam::480810688838:role/Admin
+      - aws eks update-kubeconfig --name cluster1 
   post_build:
     commands:
       - "helm $HELM_ACTION -i go-mircoservice chart/ -f ./chart/values.yaml -n go-microservice"
