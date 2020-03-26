@@ -6,7 +6,4 @@ phases:
       - aws eks update-kubeconfig --name cluster1 --role-arn arn:aws:iam::480810688838:role/Admin
   post_build:
     commands:
-      - aws --region eu-west-2 eks get-token --cluster-name cluster1
-      - cat /root/.kube/config
-      - "KUBECONFIG=/root/.kube/config kubectl get nodes"
-      - "KUBECONFIG=/root/.kube/config helm $HELM_ACTION helm $HELM_ACTION -i go-mircoservice chart/ -f ./chart/values.yaml -n go-microservice"
+      - "KUBECONFIG=/root/.kube/config helm $HELM_ACTION helm $HELM_ACTION go-mircoservice chart/ -f ./chart/values.yaml -n go-microservice"
