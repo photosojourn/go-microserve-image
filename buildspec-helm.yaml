@@ -6,4 +6,6 @@ phases:
       - aws eks update-kubeconfig --name cluster1
   post_build:
     commands:
-      - "helm $HELM_ACTION -i go-mircoservice chart/ -f ./chart/values.yaml -n go-microservice"
+      - aws --region eu-west-2 eks get-token --cluster-name cluster1
+      - "KUBECONFIG=/root/.kube/config kubectl get nodes"
+      - "KUBECONFIG=/root/.kube/config helm $HELM_ACTION helm $HELM_ACTION -i go-mircoservice chart/ -f ./chart/values.yaml -n go-microservice"
