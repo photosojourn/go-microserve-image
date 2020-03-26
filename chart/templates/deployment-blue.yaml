@@ -23,9 +23,9 @@ spec:
           imagePullPolicy: {{ .Values.blue.pullPolicy }}
           env:
              - name: S3_BUCKET
-               value: {{ .bucket }}
+               value: {{ .Values.bucket }}
              - name: AWS_REGION
-               value: {{ .region }}
+               value: {{ .Values.region }}
           ports:
             - name: http
               containerPort: 8080
