@@ -9,11 +9,11 @@ iam_role: go_ms_role
 
 blue:
   replicaCount: 1
-  image: 480810688838.dkr.ecr.eu-west-2.amazonaws.com/russ-go-microservice:latest
+  image: 480810688838.dkr.ecr.eu-west-2.amazonaws.com/go-microservice:latest
   pullPolicy: Always
 green:
   replicaCount: 1
-  image: 480810688838.dkr.ecr.eu-west-2.amazonaws.com/russ-go-microservice:latest
+  image: 480810688838.dkr.ecr.eu-west-2.amazonaws.com/go-microservice:latest
   pullPolicy: Always
 
 
